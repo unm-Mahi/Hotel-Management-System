@@ -1,0 +1,59 @@
+{% load static %}
+{% include 'Header.html' %}
+{% include 'Mynav.html' %}
+<section>
+<div class="container">
+    <hr color="orange" size="10">
+    <h1 align="center">Your Bookings</h1>
+    <hr color="orange" size="10">
+   
+<form method="POST">
+    {% csrf_token %}
+    
+   
+   <table class="table table-bordered table-striped">
+    <thead class='table-dark'>
+        <tr>
+            <th align="center">
+                Room Type
+            </th>
+       
+            <th align="center">
+                Number of Rooms 
+            </th>
+          
+            <th align="center">
+                Date(from) 
+            </th>
+            <th align="center">
+                Date(to) 
+            </th>
+           
+            <th align="center">
+                Payment Via
+            </th>
+           
+           
+        </tr>
+    </thead>
+ <tbody>
+        {% for data in roomdata %}
+        <tr class="text-white-50 font-weight-bolder" style="font-size:x-large;" >
+            <td>{{ data.r_type }}</td>
+            <td>{{ data.r_no }}</td>
+            <td>{{ data.r_dfrom }}</td>
+            <td>{{ data.r_dto }}</td>
+            <td>{{ data.r_payment }}</td>
+            <!-- <td><a href="edit/{{ data.id }}">Edit</a></td> -->
+        </tr>
+        {% endfor %}
+
+    </tbody>
+   </table>
+   <input type="submit" name="showbtn" value="Show Data"/>
+
+</form>
+
+</div>
+</section>
+{% include 'Footer.html' %}

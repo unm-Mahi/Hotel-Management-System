@@ -1,0 +1,92 @@
+{% load static %}
+{% include 'Header.html' %}
+{% include 'Mynav.html' %}
+
+
+    
+
+    
+    
+    <section>
+        <div class="container">
+            <hr color="orange" size="10">
+    <h1 align="center">Book a Room</h1>
+    <hr color="orange" size="10">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <table class="table table-bordered table-dark">
+            <tbody>
+                <tr>
+                    <td>
+                        Room Type:
+                    </td>
+                    <td>
+                        
+                        <select name="room_type">
+                            <option>Single </option> 
+                            <option>Double Deluxe</option> 
+                            <option>Presidential Suite </option> 
+                            <option>Business Suite </option> 
+                            <option>Meeting Room</option> 
+                        </select>
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Number of Rooms: 
+                    </td>
+                    <td>
+                        <input type="number" name="rno"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Date(from): 
+                    </td>
+                    <td>
+                        <input type="date" name="Dfrom"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        Date(to): 
+                    </td>
+                    <td>
+                        <input type="date" name="Dto"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Payment Via:
+                    </td>
+                    <td>
+                        
+                        <select name="payment">
+                            <option>Net Banking</option> 
+                            <option>Debit Card</option> 
+                            <option>Credit Card</option> 
+                            <option>Cash</option> 
+                        </select>
+                    
+                    </td>
+                </tr>
+                
+                <tr>
+                <td>
+                    <input type="submit" name="bkbtn" value="Book Now"/>
+                    <!-- <input type="submit" name="subbtn2" value="Login"/> -->
+                </td>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
+    </form>  
+    </div> 
+    </section>
+    
+    
+    
+    {% include 'Footer.html' %}
+    

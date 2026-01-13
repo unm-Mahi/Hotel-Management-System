@@ -1,0 +1,50 @@
+{% include 'Header.html' %}
+
+<section class="container" style="margin-top: 200px; width: 50%;">
+    <hr color="black" size="10">
+<h1 class="card-title text-lg-center text-white" >Login</h1>
+<hr color="black" size="10">
+    <form method="post">
+        {% csrf_token %}
+        
+    <table class="table table-bordered table-dark">
+        <tbody>
+            <tr>
+                <td>
+                    Enter Name 
+                </td>
+                <td>
+                    <input type="text" name="uname"/>
+                </td>
+                <tr>
+                <td>
+                    Enter Password
+                </td>
+                <td>
+                    <input type="password" name="password"/>
+                </td>
+            </tr>
+            <tr>
+            <td colspan="2" align="center">
+               
+                <input type="submit" name="lgbtn" value="Login"/>
+                <tr>
+                    <td colspan="2" align="center">
+                 <a href="ureg">New User Register Here</a>
+                </td>
+                </tr>
+            </td>
+            </tr>
+
+            </tr>
+            <tr>
+                <td colspan="2", align="center" class="text-danger">{{ err }}</td>
+        </tr>
+        </tbody>
+    </table>
+</form>   
+</section>
+
+
+
+{% include 'Footer.html' %}

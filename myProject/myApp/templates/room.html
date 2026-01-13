@@ -1,0 +1,80 @@
+{% load static %}
+{% include 'Mynav.html' %}
+{% include 'Header.html' %}
+<section>
+    
+    
+
+<div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+  <hr color="orange" size="10">
+<h1 align="center">Our Rooms</h1>
+<hr color="orange" size="10">
+<form method="POST">
+    {% csrf_token %}
+<div class="container">
+   <!-- <input type="submit" name="showbtn" value="Show Data"/> -->
+<div class="row">
+    <div class="col-sm-4" style="margin-top: 20px; margin-bottom: 20px;">   
+   <div class="card" style="background-color: burlywood;">
+    <img src="{% static 'images\single.jpg' %}" class="card-img-top" style="height: 215px;" alt="...">
+    <div class="card-body">
+      <p class="card-text"><h2>Single Room</h2>
+                           <h5 style="text-align: right;">Price: 999/-</h5>
+                           <h6 style="text-align: right;">Prices may vary</h6></p>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-4" style="margin-top: 20px; margin-bottom: 20px;">
+  <div class="card" style="background-color: burlywood;">
+    <img src="{% static 'images\double.jpg' %}" class="card-img-top" style="height: 215px;" alt="...">
+    <div class="card-body">
+      <p class="card-text"><h2>Double Deluxe</h2>
+                           <h5 style="text-align: right;">Price: 1999/-</h5>
+                           <h6 style="text-align: right;">Prices may vary</h6></p>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-4" style="margin-top: 20px; margin-bottom: 20px;">
+  <div class="card" style="background-color: burlywood;">
+    <img src="{% static 'images\presidential.jpg' %}" class="card-img-top" style="height: 215px;" alt="...">
+    <div class="card-body">
+      <p class="card-text"><h2>Presidential Suite</h2>
+                           <h5 style="text-align: right;">Price: 2999/-</h5>
+                           <h6 style="text-align: right;">Prices may vary</h6></p>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-4" style="margin-top: 20px; margin-bottom: 20px;">
+  <div class="card" style="background-color: burlywood;">
+    <img src="{% static 'images\business.jpg' %}" class="card-img-top" style="height: 215px;" alt="...">
+    <div class="card-body">
+      <p class="card-text"><h2>Business Suite</h2>
+                           <h5 style="text-align: right;">Price: 4999/-</h5>
+                           <h6 style="text-align: right;">Prices may vary</h6></p>
+    </div>
+</div>
+</div>
+
+
+<div class="col-sm-4" style="margin-top: 20px; margin-bottom: 20px;">
+  <div class="card" style="background-color: burlywood;">
+    <img src="{% static 'images\meeting.jpg' %}" class="card-img-top" style="height: 215px;" alt="...">
+    <div class="card-body">
+      <p class="card-text"><h2>Meeting Room</h2>
+                           <h5 style="text-align: right;">Price: 6999/-</h5>
+                           <h6  style="text-align: right;">Prices may vary</h6></p>
+    </div>
+  </div>
+</div>
+   </div>
+</div>
+   
+</form>
+</div>
+       
+    
+</section>
+{% include 'Footer.html' %}

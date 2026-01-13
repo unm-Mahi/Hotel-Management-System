@@ -1,0 +1,58 @@
+{% include 'Header.html' %}
+{% include 'Mynav.html' %}
+<form method="post">
+    {% csrf_token %}
+<section>
+    <div class="container">
+    <hr color="orange" size="10">
+    <h1 align="center">Show All Data</h1>
+    <hr color="orange" size="10">
+
+
+    <table class="table table-bordered table-striped">
+<thead class="table-dark">
+    <tr>
+    <th>Employee Id</th>
+    <th>Employee Name</th>
+    <th>Mobile No.</th>
+    <th>Email Id</th>
+    <th>Edit</th>
+    </tr>
+</thead>
+<tbody>
+    {% for data in userdata %}
+    <tr>
+        <td>{{ data.eid }}</td>
+        <td>{{ data.name }}</td>
+        <td>{{ data.mob }}</td>
+        <td>{{ data.email }}</td>
+        <td><a href="edit/{{ data.eid }}">Edit</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+</div>
+</section>
+<section>
+<div class="container">
+    <div class="row">
+
+        {% for data in userdata %}
+        <div class="col-md-3 col-sm-6" style="background-color:black">
+            <div class="card mt-3 mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">{{ data.name }}</h5>
+                  <p class="card-text">Mobile No.: {{ data.mob }}</p>
+                  <p class="card-text">Email Id: {{ data.email }}</p>
+                  <a href="#" class="btn btn-primary btn-block">View Details</a>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</section>
+</form>
+
+
+{% include 'Footer.html' %}

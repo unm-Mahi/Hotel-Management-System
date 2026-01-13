@@ -1,0 +1,36 @@
+{% load static %}
+{% include 'Mynav.html' %}
+{% include 'Header.html' %}
+<section>
+    
+
+<div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+  <hr color="orange" size="10">
+    <h1 align="center">Our Team</h1>
+    <hr color="orange" size="10">
+<form method="POST">
+    {% csrf_token %}
+   <!-- <input type="submit" name="showbtn" value="Show Data"/> -->
+
+</form>
+<div class="row">
+    {% for data in employeedata %}
+    <div class="col-md-4">
+        <div class="card" style="width: 300px; margin-top: 20px; background-color: burlywood;">
+            <img src="media/{{ data.emp_img }}" class="card-img-top" alt="..." height="300px">
+            <div class="card-body">
+              <h5 class="card-title">{{ data.emp_name }}</h5>
+              <p class="card-text">{{ data.emp_email }}</p>
+              <p class="card-text">{{ data.emp_dept }}</p>
+              <a href="#" class="btn btn-primary">{{ data.emp_mob }}</a>
+            </div>
+          </div>
+          
+    </div>
+    {% endfor %}
+</div>
+
+</div>
+
+</section>
+{% include 'Footer.html' %}

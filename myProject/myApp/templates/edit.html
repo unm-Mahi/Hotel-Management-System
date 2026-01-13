@@ -1,0 +1,88 @@
+{% load static %}
+{% include 'Header.html' %}
+{% include 'Mynav.html' %}
+
+
+    <hr color="orange" size="10">
+    <h1 align="center">Edit </h1>
+    <hr color="orange" size="10">
+
+   
+
+<section>
+    <div class="container">
+
+
+
+
+    <form method="post">
+        {% csrf_token %}
+    <table class="table table-bordered table-dark">
+        
+        <tbody>
+            <tr>
+                <td>
+                    Employee Name: 
+                </td>
+                <td>
+                    <input type="text" readonly name="ename" value="{{ employeedata.emp_name }}"/>
+                </td>
+            </tr>
+                <tr>
+                <td>
+                    Password:
+                </td>
+                <td>
+                    <input type="text" name="password" value="{{ employeedata.emp_pwd }}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email:
+                </td>
+                <td>
+                    <input type="text" readonly name="email" value="{{ employeedata.emp_email }}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mobile Number:
+                </td>
+                <td>
+                    <input type="number" readonly name="mob" value="{{ employeedata.emp_mob }}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Department: 
+                </td>
+                <td>
+                    <input type="text" readonly name="dept" value="{{ employeedata.emp_dept }}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date of Birth:
+                </td>
+                <td>
+                    <input type="text" readonly name="dob" value="{{ employeedata.emp_dob }}"/>
+                </td>
+            </tr>
+            <tr>
+            <td>
+                <input type="submit" name="upbtn" value="Update"/>
+                <!-- <input type="submit" name="subbtn2" value="Login"/> -->
+            </td>
+            </tr>
+            </tr>
+        </tbody>
+    </table>
+</form>  
+</div> 
+</section>
+
+
+
+
+    
+{% include 'Footer.html' %}

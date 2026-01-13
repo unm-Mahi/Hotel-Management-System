@@ -1,0 +1,56 @@
+{% include 'Header.html' %}
+
+<section>
+    <div class="container">
+    <form method="post">
+        {% csrf_token %}
+    <table class="table table-bordered table-dark">
+        <tbody>
+            <tr>
+                <td>
+                    Name: 
+                </td>
+                <td>
+                    <input type="text" name="uname"/>
+                </td>
+            </tr>
+                <tr>
+                <td>
+                    Password:
+                </td>
+                <td>
+                    <input type="password" name="password"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email:
+                </td>
+                <td>
+                    <input type="text" name="email"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mobile Number:
+                </td>
+                <td>
+                    <input type="number" name="mob"/>
+                </td>
+            </tr>
+            <tr>
+            <td>
+                <input type="submit" name="regbtn" value="Register"/>
+                <!-- <input type="submit" name="subbtn2" value="Login"/> -->
+            </td>
+            </tr>
+           
+        </tbody>
+    </table>
+</form>  
+</div> 
+</section>
+
+
+
+{% include 'Footer.html' %}
